@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "de68e3b5-d2c9-43a0-ba9b-a6af4c788878",
+		"name": "ExoscaleAtHomeTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13569472"
+	},
+	"item": [
+		{
+			"name": "Create instance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"instance-type\": {\n        \"id\": \"b6e9d1e8-89fc-4db3-aaa4-9b4c5b1d0844\",\n        \"authorized\": true,\n        \"cpus\": 2,\n        \"memory\": 4294967296,\n        \"family\": \"standard\",\n        \"size\": \"medium\",\n        \"zones\": [\n            \"ch-dk-2\",\n            \"de-fra-1\",\n            \"at-vie-2\",\n            \"de-muc-1\",\n            \"ch-gva-2\",\n            \"at-vie-1\",\n            \"bg-sof-1\"\n        ]\n    },\n    \"template\": {\n        \"maintainer\": \"Exoscale\",\n        \"description\": \"Linux Ubuntu 23.10 64-bit 2023-11-17-1f1a95\",\n        \"ssh-key-enabled\": true,\n        \"family\": \"ubuntu\",\n        \"name\": \"Linux Ubuntu 23.10 64-bit\",\n        \"default-user\": \"ubuntu\",\n        \"size\": 10737418240,\n        \"password-enabled\": false,\n        \"build\": \"2023-11-17-1f1a95\",\n        \"checksum\": \"1f1a95cb3c7e1b97be00c26e37e19f49\",\n        \"boot-mode\": \"uefi\",\n        \"id\": \"632f051f-f4af-49ef-948a-47210e92fdcd\",\n        \"version\": \"23.10\",\n        \"created-at\": \"2023-11-17T09:26:50Z\",\n        \"visibility\": \"public\"\n    },\n    \"disk-size\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v2/instance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"instance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get templates list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get instance-types list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v2/instance-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"instance-types"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
