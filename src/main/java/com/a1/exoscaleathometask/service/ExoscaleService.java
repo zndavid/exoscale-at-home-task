@@ -10,8 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.UUID;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -74,21 +72,6 @@ public class ExoscaleService {
         try {
             Object response = restTemplate.getForObject(
                     apiProperties.baseUrl() + INSTANCE_TYPE_ENDPOINT,
-                    Object.class
-            );
-            log.info("Received response for fetching all instance-types: {}", response);
-            return response;
-        } catch (Exception e) {
-            log.error("Error fetching instance-types at endpoint {}: {}", INSTANCE_TYPE_ENDPOINT, e.getMessage(), e);
-            throw e;
-        }
-    }
-
-    public Object getPassword(String id) {
-        log.info("Fetching all instance-types. Endpoint: {}", INSTANCE_TYPE_ENDPOINT);
-        try {
-            Object response = restTemplate.getForObject(
-                    apiProperties.baseUrl() + INSTANCE_ENDPOINT + "/" + id + "/password",
                     Object.class
             );
             log.info("Received response for fetching all instance-types: {}", response);

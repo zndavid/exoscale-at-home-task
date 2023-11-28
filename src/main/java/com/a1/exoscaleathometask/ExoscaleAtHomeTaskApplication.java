@@ -9,8 +9,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @EnableConfigurationProperties(value = ExoscaleApiProperties.class)
 public class ExoscaleAtHomeTaskApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ExoscaleAtHomeTaskApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ExoscaleAtHomeTaskApplication.class, args);
+    }
 
 }

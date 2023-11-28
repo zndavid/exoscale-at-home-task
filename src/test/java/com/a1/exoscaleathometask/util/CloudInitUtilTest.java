@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Base64;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class CloudInitUtilTest {

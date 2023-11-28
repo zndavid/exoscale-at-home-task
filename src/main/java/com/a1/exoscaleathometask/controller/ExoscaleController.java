@@ -3,10 +3,7 @@ package com.a1.exoscaleathometask.controller;
 import com.a1.exoscaleathometask.service.ExoscaleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/v2")
@@ -31,12 +28,5 @@ public class ExoscaleController {
         Object response = exoscaleService.getAllInstanceTypes();
         return ResponseEntity.ok(response);
     }
-
-    @GetMapping("/{id}/password")
-    public ResponseEntity<Object> getPassword(@PathVariable @Validated UUID id) {
-        Object response = exoscaleService.getPassword(id.toString());
-        return ResponseEntity.ok(response);
-    }
-
 
 }
